@@ -1,1 +1,0 @@
-# Računalniški praktikum
