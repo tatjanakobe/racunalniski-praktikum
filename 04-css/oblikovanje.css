@@ -53,9 +53,23 @@ h2 {
   text-align: left;
   float: right;
   margin-left: 2em;
+  
 }
 
 .slika img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
+}
+
+
+.slika p:last-child {
+    font-size: 0.8em;
+    padding-top: 0;
+}
+a::before {
+  content: "♡";
+}
+a::after {
+    content: "♡";
 }
