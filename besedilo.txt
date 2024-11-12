@@ -1,3 +1,0 @@
-pozenite urejevalnik VSCcode.
-v urejevalniku v domačem imeniku
-ustvarite in odprite imenik za racunalniski praktikum.
