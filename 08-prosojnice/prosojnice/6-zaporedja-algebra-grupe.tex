@@ -39,22 +39,44 @@
 
 \begin{frame}{Velika determinanta}
 	Izračunaj naslednjo determinanto $2n \times 2n$, ki ima na neoznačenih mestih ničle.
-	??
+\[
+\begin{vmatrix}
+1 &   &     &     & 1   &     &     &     &     \\
+  & 2 &     &     & 2   &     &     &     &     \\
+  &   & \ddots &     & \vdots &     &     &     &     \\
+  &   &     & n-1 & n-1 &     &     &     &     \\
+1 & 2 & \cdots & n-1 & n   & n+1 & n+2 & \cdots & 2n \\
+  &   &     &     & n+1 & n+1 &     &     &     \\
+  &   &     &     & n+2 &     & n+2 &     &     \\
+  &   &     &     & \vdots &     &     & \vdots &     \\
+  &   &     &     & 2n  &     &     &     & 2n \\
+\end{vmatrix}
+\]
+
+
 \end{frame}
 
 \begin{frame}{Grupe}
 	Naj bo
-	??
+	\begin{align*}
+		G &= \left\{ z \in \CC \ ; \ z = 2^{k} \left( \cos(m \pi \sqrt{2}) \right), \ k, m \in \ZZ \right\} \\
+		H &= \left\{ ( x, y ) \in \RR^{2} \ ; \ x, y \in \ZZ \right\}
+		\end{align*}
+		
+
 	\begin{enumerate}
 		\item
-			Pokaži, da je $G$ podgrupa v grupi ??
+			Pokaži, da je $G$ podgrupa v grupi $(\CC \setminus \{0\}, \cdot)$
 			neničelnih kompleksnih števil za običajno množenje.
 		\item
-			Pokaži, da je $H$ podgrupa v aditivni grupi ??
+			Pokaži, da je $H$ podgrupa v aditivni grupi $(\RR^{2}, +)$
 			ravninskih vektorjev za običajno seštevanje po komponentah.
 		\item
 			Pokaži, da je preslikava $f:H\to G$, podana s pravilom
-			??
+			\[
+            ( x, y ) \mapsto 2^{x} \left( \cos\left( y \pi \sqrt{2} \right) \right) + \mathrm{i} \sin\left( y \pi \sqrt{2} \right)
+            \]
+
 			izomorfizem grup $G$ in $H$.
 	\end{enumerate}
 \end{frame}
