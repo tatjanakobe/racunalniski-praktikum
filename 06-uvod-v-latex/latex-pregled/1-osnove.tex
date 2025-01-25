@@ -1,111 +1,120 @@
-% Ta datoteka vsebuje osnove LaTeXa. Uporabite jo tako, da primerjate njeno vsebino z
-% generirano datoteko PDF.
 
-% Kogar zanima več LaTeXu, lahko obišče https://www.latex-project.org
+Ta datoteka vsebuje osnove LaTeXa. Uporabite jo tako, da primerjate njeno vsebino z
+  generirano datoteko PDF.
 
-% LaTeX sprejme eno ali več datotek .tex in naredi PDF. Ena od .tex datotek je glavna in
-% iz nje vključimo ostale (tega zaenkrat ne bomo počeli). V datoteko .tex pišemo besedilo
-% in ukaze.
+ Kogar zanima več LaTeXu, lahko obišče https://www.latex-project.org
 
-% Komentarji se začnejo z znakom % in veljajo do konca vrstice. Kar napišete v komentar,
-% LaTeX ignorira.
+ LaTeX sprejme eno ali več datotek .tex in naredi PDF. Ena od .tex datotek je glavna in
+  iz nje vključimo ostale (tega zaenkrat ne bomo počeli). V datoteko .tex pišemo besedilo
+  in ukaze.
 
-% Dokument se začne z ukazom \documentclass. Ukaz \documentclass ima v [...] nastavitve in v {...} tip dokumenta.
+ Komentarji se začnejo z znakom
+  in veljajo do konca vrstice. Kar napišete v komentar,
+  LaTeX ignorira.
+
+ Dokument se začne z ukazom \documentclass. Ukaz \documentclass ima v [...] nastavitve in v {...} tip dokumenta.
 
 \documentclass[a4paper]{article}
 
 
-% LaTeX ima veliko število tipov dokumentov, najboj pogosti so:
-%   article - članek
-%   amsart - članki za revije American Mathematical Society
-%   beamer - prosojnice za predavanje
-%   book - knjiga
-%   letter - pismo
+LaTeX ima veliko število tipov dokumentov, najboj pogosti so:
+    article - članek
+    amsart - članki za revije American Mathematical Society
+    beamer - prosojnice za predavanje
+    book - knjiga
+    letter - pismo
 
-% Nastavitve so odvisne od tipa dokumenta, nekatere običajne so: a4paper ... format
-% strani naj bo A4 (namesto ameriški letter) 10pt, 11pt, 12pt ... velikost pisave
+ Nastavitve so odvisne od tipa dokumenta, nekatere običajne so: a4paper ... format
+  strani naj bo A4 (namesto ameriški letter) 10pt, 11pt, 12pt ... velikost pisave
 
-% Sledi PREAMBULA, kjer se še ne piše nobenega besedila, ampak samo ukaze in nastavitve.
+ Sledi PREAMBULA, kjer se še ne piše nobenega besedila, ampak samo ukaze in nastavitve.
 
-% LaTeX ima veliko število zelo uporabnih paketov. Običajno najprej povemo, katere pakete
-% bomo uporabljali. To naredimo z ukazom \usepackage[...]{...} kjer v [...] damo dodatne
-% nastavitve za paket in v {...} ime paketa.
+ LaTeX ima veliko število zelo uporabnih paketov. Običajno najprej povemo, katere pakete
+  bomo uporabljali. To naredimo z ukazom \usepackage[...]{...} kjer v [...] damo dodatne
+  nastavitve za paket in v {...} ime paketa.
 
-% Za slovenščino moramo nastaviti kodno tabelo datoteke .tex in kodno tabelo datoteke
-% PDF, da se pravilno obravnava šumnike. LaTeXu povemo tudi, da uporabljamo slovenščino
-% (da pravilno prikaže datum ipd).
+ Za slovenščino moramo nastaviti kodno tabelo datoteke .tex in kodno tabelo datoteke
+  PDF, da se pravilno obravnava šumnike. LaTeXu povemo tudi, da uporabljamo slovenščino
+  (da pravilno prikaže datum ipd).
 
-\usepackage[utf8]{inputenc}   % vhodna datoteka je kodirana v sistemu UTF-8
+\usepackage[utf8]{inputenc}  
+ vhodna datoteka je kodirana v sistemu UTF-8
 
-% Ostale možnosti za kodiranje so:
-%\usepackage[cp1250]{inputenc}   % Kodirna tabela za Windows, zastarelo
-%\usepackage[latin2]{inputenc}   % Kodirna tabela za Linux, zastarelo
+Ostale možnosti za kodiranje so:
+ \usepackage[cp1250]{inputenc}  
+  Kodirna tabela za Windows, zastarelo
+ \usepackage[latin2]{inputenc}  
+  Kodirna tabela za Linux, zastarelo
 
-% Ker smo nastavili vhodno datoteko .tex na UTF-8, moramo poskrbeti,
-% da tudi urejevalnik, s katerim urejamo .tex, uporablja UTF-8.
-% V Visual Studio code je ta nastavitev spodaj desno.
+ Ker smo nastavili vhodno datoteko .tex na UTF-8, moramo poskrbeti,
+  da tudi urejevalnik, s katerim urejamo .tex, uporablja UTF-8.
+  V Visual Studio code je ta nastavitev spodaj desno.
 
-\usepackage[T1]{fontenc}      % izhodna datoteka je korirana v sistemu T1
+\usepackage[T1]{fontenc}     
+ izhodna datoteka je korirana v sistemu T1
 
-% uporabljamo slovenščino (s tem nastavimo delilne vzorce, format datuma, slovensko ime
-% za "abstract" ipd.
+uporabljamo slovenščino (s tem nastavimo delilne vzorce, format datuma, slovensko ime
+  za "abstract" ipd.
 \usepackage[slovene]{babel}
 
-% Nastavimo lahko tudi razne pisave, glej http://www.tug.dk/FontCatalogue/
-% Za slovenščino je dobro nastaviti novejšo inačico pisave lmodern
+Nastavimo lahko tudi razne pisave, glej http://www.tug.dk/FontCatalogue/
+  Za slovenščino je dobro nastaviti novejšo inačico pisave lmodern
 
-\usepackage{lmodern}            % Boljši fonti, s pravimi šumniki
-% Ostale pogoste izbire pisav:
-% \usepackage{times}            % Times New Roman
-% \usepackage{palatino}         % Palatino
-% \usepackage{concrete}         % Pisava, ki jo je uporabil Donald Knuth v knjigi "Concrete mathematics"
+\usepackage{lmodern}           
+ Boljši fonti, s pravimi šumniki
+ Ostale pogoste izbire pisav:
+ \usepackage{times}           
+ Times New Roman
+ \usepackage{palatino}        
+ Palatino
+ \usepackage{concrete}        
+ Pisava, ki jo je uporabil Donald Knuth v knjigi "Concrete mathematics"
 
-% S tem smo zaključili pakete in nastavitve za slovenščino. Ostali paketi
-% in nastavitve so odvisni od tega, kaj bomo počeli. V tej datoteki bomo
-% prikazali osnove in hiper-povezave.
+S tem smo zaključili pakete in nastavitve za slovenščino. Ostali paketi
+  in nastavitve so odvisni od tega, kaj bomo počeli. V tej datoteki bomo
+  prikazali osnove in hiper-povezave.
 
-\usepackage{hyperref}            % Paket za povezave znotraj dokumenta in hiper-povezave
+\usepackage{hyperref}           
+ Paket za povezave znotraj dokumenta in hiper-povezave
 
-% To je konec preambule
+To je konec preambule
 
-% Sledi vsbina dokumenta, ki se začne z ukazom \begin{document} in konča z \end{document}.
+ Sledi vsbina dokumenta, ki se začne z ukazom \begin{document} in konča z \end{document}.
 
 \begin{document}
 
-% Nastavimo naslov in avtorja.
+Nastavimo naslov in avtorja.
 
 \title{Osnovno o {\LaTeX}u}
 \author{Andrej Bauer}
 
-% Lahko bi nastavili tudi datum, če ga ne, se bo izpisal današnji datum
-% \date{10.\ 10.\ 2017}
+Lahko bi nastavili tudi datum, če ga ne, se bo izpisal današnji datum
+  \date{10.\ 10.\ 2017}
 
-% Tule piše, zakaj je dobro \title in \author postaviti znotraj okolja document:
-% https://tex.stackexchange.com/questions/92702/should-i-place-title-author-date-in-the-preamble-or-after-begindocument
+ Tule piše, zakaj je dobro \title in \author postaviti znotraj okolja document:
+  https://tex.stackexchange.com/questions/92702/should-i-place-title-author-date-in-the-preamble-or-after-begindocument
 
-% Ukaz, s katerim dejansko naredimo naslov
+ Ukaz, s katerim dejansko naredimo naslov
 \maketitle
 
-% LaTeX pozna t.i. okolja, ki se začnejo in končajo z ukazoma
-%
-% \begin{imeOkolja} ... \end{imeOkolja}.
-%
-% Okolij je zelo veliko, zaenkrat bomo uporabili samo nekatera osnovna.
+LaTeX pozna t.i. okolja, ki se začnejo in končajo z ukazoma
+  \begin{imeOkolja} ... \end{imeOkolja}.
+  Okolij je zelo veliko, zaenkrat bomo uporabili samo nekatera osnovna.
 
 \begin{abstract}
   To je povzetek, v katerega napišemo kratek opis vsebine članka, kar pomeni, da ta stavek
   pravzaprav ne spada. V tem kratkem članku spoznamo osnove dokumentnega sistema {\LaTeX}.
 \end{abstract}
 
-% Članek je hierarhično razdeljen na razdelke (\section), podrazdelke (\subsection),
-% podpodrazdelke (\subsubsection) in podpodpodrazdelke (\paragraph). V večini primerov
-% potrebujemo samo razdelke in podarazdelke.
+Članek je hierarhično razdeljen na razdelke (\section), podrazdelke (\subsection),
+  podpodrazdelke (\subsubsection) in podpodpodrazdelke (\paragraph). V večini primerov
+  potrebujemo samo razdelke in podarazdelke.
 
 \section{Uporaba razdelkov}
 
-% Oblikovalci pogosto potrebujejo kako besedilo, da prikažejo design spletne strani
-% ali dokumenta. Tradicionalno se v ta namen uporablja "Loerm ipsum ..." glej
-% http://www.lipsum.com. Tudi mi ga bomo, kar je bolje, kot da bi citirali Cankarja.
+Oblikovalci pogosto potrebujejo kako besedilo, da prikažejo design spletne strani
+  ali dokumenta. Tradicionalno se v ta namen uporablja "Loerm ipsum ..." glej
+  http://www.lipsum.com. Tudi mi ga bomo, kar je bolje, kot da bi citirali Cankarja.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper, ligula eget
 porttitor lobortis, lacus ante posuere magna, eget dapibus lacus odio sit amet urna.
@@ -156,20 +165,20 @@ Z zavitimi oklepaji \texttt{\{} in \texttt{\}} v LaTeXu združimo kos besedila a
 da se obravnavajo kot celota.
 
 Ukazi ali \emph{makroji} se v LaTeXu pišejo
-%
+
 \begin{center}
   \verb|\imeUkaza{...}|
 \end{center}
-%
+
 ali
-%
+
 \begin{center}
   \verb|\imeUkaza{...}{...}{...}|
 \end{center}
-%
+
 če ukaz sprejme več argumentov. Uporabnik lahko definira svoje ukaze, a o tem kasneje.
 Ukazi brez argumenta ``pojejo'' presledek, zato jih pišemo v zavite oklepaje:
-%
+
 \begin{itemize}
 \item \LaTeX je dokumentni sistem.
 \item {\LaTeX} je dokumentni sistem.
@@ -184,7 +193,7 @@ Kaj se zgodi, če \emph{uporabimo poudarjeno \emph{znotraj} poudarjenega besedil
 Seveda \textbf{lahko lahko nastavimo tudi \textnormal{običajno} pisavo}.
 Besedilo lahko tudi \underline{podčrtamo}, vendar tega ne priporočamo, \underline{ker} \underline{je grdo}.
 
-% Sans-serifna pisava je pisava brez "repkov" (serifov), glej https://en.wikipedia.org/wiki/Sans-serif
+Sans-serifna pisava je pisava brez "repkov" (serifov), glej https://en.wikipedia.org/wiki/Sans-serif
 Pišemo lahko tudi v \textsf{sans-serifni pisavi} ali pa \textsc{z malimi velikimi črkami},
 denimo \textsc{Python}. Ležeča pisava \textsl{ni ista reč kot} \emph{poudarjena pisava}.
 Včasih uporabimo tudi \texttt{pisavo fiksne širine}, v kateri so vsi znaki enako široki.
@@ -192,7 +201,7 @@ Včasih uporabimo tudi \texttt{pisavo fiksne širine}, v kateri so vsi znaki ena
 
 \subsection{Velikosti pisav}
 
-% Ukazi s katerimi nastavimo velikost pisave, a tega raje ne počnite na roke
+Ukazi s katerimi nastavimo velikost pisave, a tega raje ne počnite na roke
 \begin{center}
 {\Huge Zdravljica} \\
 {\Huge Živé naj vsi naródi,} \\
@@ -210,7 +219,7 @@ Včasih uporabimo tudi \texttt{pisavo fiksne širine}, v kateri so vsi znaki ena
 
 Pozorno poglejte naslednje primere in povejte, kaj se je zgodilo. Nato se naučite, kaj so
 \emph{ligature} in \emph{kerningi}:
-%
+
 \begin{itemize}
 \item afina preslikava
 \item {a}{f}{i}{n}{a} preslikava
@@ -222,7 +231,7 @@ Pozorno poglejte naslednje primere in povejte, kaj se je zgodilo. Nato se nauči
 \section{Naštevanje}
 
 Neoštevilčeno naštevanje:
-%
+
 \begin{itemize}
 
 \item Phasellus dolor odio, rhoncus et turpis eu, pharetra maximus nibh. Nullam maximus
@@ -235,7 +244,7 @@ Neoštevilčeno naštevanje:
 \end{itemize}
 
 Oštevilčeno naštevanje:
-%
+
 \begin{enumerate}
 
 \item Phasellus dolor odio, rhoncus et turpis eu, pharetra maximus nibh. Nullam maximus
@@ -248,7 +257,7 @@ Oštevilčeno naštevanje:
 \end{enumerate}
 
 Vgnezdeno naštevanje:
-%
+
 \begin{enumerate}
 \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 \item Phasellus dolor odio, rhoncus et turpis eu, pharetra maximus nibh:
@@ -276,20 +285,23 @@ Vgnezdeno naštevanje:
 \subsection{Posebni znaki}
 
 Znaki
-%
+
 \begin{verbatim}
-  # $ % & \ ^ _ { } ~
+  # $
+   & \ ^ _ { } ~
 \end{verbatim}
-%
+
 imajo poseben pomen, saj se uporabljajo za komentarje, ukaze, matematični način itd. Če
 jih želimo zapisati, to storimo takole:
-%
+
 \begin{center}
 \begin{tabular}{cl}
 znak & ukaz \\
 \# & \verb|\#| \\
 \$ & \verb|\$| \\
-\% & \verb|\%| \\
+
+& \verb|
+ | \\
 \& & \verb|\&| \\
 {\textbackslash} & \verb|{\textbackslash}| \\
 {\textasciicircum} & \verb|{\textasciicircum}| \\
@@ -356,7 +368,7 @@ na primer za formulo, potem bo besedilo zamaknjeno, kot da se je začel nov odst
 \section{Nekatera druga okolja}
 
 Daljši navedek:
-%
+
 \begin{quote}
   No, potlej je tista pošast ali tisti peklenski škrat plezal gor ob barki prav na glas:
   škreb! škreb! škreb! Kakor je na vrh prišel, pa se ti je iz oči v oči meni nasproti
@@ -367,7 +379,7 @@ Daljši navedek:
 
 \noindent
 Centrirano besedilo:
-%
+
 \begin{center}
 Overhead the albatross hangs motionless upon the air\\
 And deep beneath the rolling waves in labyrinths of coral caves\\
@@ -378,7 +390,7 @@ And everything is green and submarine
 
 \noindent
 Poravnano levo:
-%
+
 \begin{flushleft}
 And no one showed us to the land\\
 And no one knows the wheres or whys\\
@@ -388,7 +400,7 @@ And starts to climb towards the light
 
 \noindent
 Poravnano desno:
-%
+
 \begin{flushright}
 Strangers passing in the street\\
 By chance two separate glances meet\\
@@ -413,7 +425,7 @@ $x$\footnote{Pozor, tu je mišljen $x$ in ne $x^3$.} in tako povzročati zmedo.
 
 O matematičnih izrazih bomo povedali še veliko, tu pa razložimo osnove. Matematične izraze
 pišemo v enem od dveh \emph{matematičnih načinov}:
-%
+
 \begin{description}
 \item \emph{vrstični način} (inline math), kjer je izraz zapisan med znakoma \texttt{\$}, na
   primer $a^2 + b^2 = c^2$. To je pravzaprav starejši zapis, lahko uporabimo tudi
@@ -421,21 +433,24 @@ pišemo v enem od dveh \emph{matematičnih načinov}:
 
 \item \emph{prikazni način} (display math), kjer je izraz zapisan med \texttt{{\char96}[} in
   \texttt{{\char96}]}, na primer
-  %
+
+  
   \[
     a^2 + b^2 = c^2.
   \]
-  %
+
+  
   Izraz v prikaznem načinu mora biti vedno del stavka in mora vsebovati ločilo, če je to
   smiselno. Starejši zapis za prikazni način je z \texttt{\$\$}:
-  %
+
+  
   $$
     a^2 + b^2 = c^2.
   $$
 \end{description}
 
 \noindent
-%
+
 Z ukazoma \texttt{{\char96}textstyle} in \texttt{{\char96}displaystyle} lahko nastavimo
 vrstični ali prikazni način na roke, kar se denimo vidi, ko zapišemo ulomke. Ulomek
 $\frac{2}{3}$ je v vrstičnem načinu, ulomek $\displaystyle \frac{2}{3}$ pa v prikaznem,
@@ -453,7 +468,7 @@ realno število''.
 \section{Viri}
 
 Navedimo nekaj virov za {\LaTeX}. Ker smo uporabili paket \texttt{hyperref}, lahko na povezave kar kliknete:
-%
+
 \begin{description}
 \item[\href{http://www-lp.fmf.uni-lj.si/plestenjak/vaje/latex/lshort.pdf}{\emph{Ne najkrajši uvod v {\LaTeX}}}]
   Ravno pravšnji pregled {\LaTeX}a --- priporočamo!
