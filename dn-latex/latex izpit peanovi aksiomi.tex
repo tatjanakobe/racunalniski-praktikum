@@ -1,0 +1,57 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel}
+\usepackage{lmodern}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+
+\newcommand{\N}{\mathbb{N}}
+
+{\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}}
+% Peanovi aksiomi
+% Mojca Novak
+\title{Peanovi aksiomi}
+\author{Mojca Novak}
+\date{27.avgust 2024}
+
+\begin{document}
+\maketitle
+
+        % povzetek
+        
+        \begin{abstract}
+            V nadaljevanju je zapisana definicija Peanovih aksiomov.
+        \end{abstract}
+
+        % definicija
+        
+        \begin{definicija}
+            \textbf{Peanovi aksiomi} \cite{}
+            Množica naravnih števil je množica $N$ s funkcijo $\varphi : \N \rightarrow \N$, 
+            ki vsakemu naravnemu številu $n$ priredi njegovega neposrednega naslednika $\varphi(n)$. 
+            Pri tem veljajo naslednji aksiomi:
+            \begin{enumerate}
+                \item $N$ vsebuje število $\epsilon$, ki ni neposredni naslednik nobenega naravnega števila;
+                \item neposredna naslednika dveh različnih naravnih števil sta različna, tj.\ funkcija $\varphi$ je injektivna: 
+                če je $n \neq m$, je $\varphi(n) \neq \varphi(m)$;
+                \item Če za podmnožico $A \in \N$ veljata lastnosti:
+                \begin{enumerate}
+                    \item $\epsilon \in A$ in
+                    \item če je $n \in A$, je tudi $A = \N$,
+                    potem je $A = N$.
+                \end{enumerate}
+            \end{enumerate}
+            % konec definicije
+        \end{definicija}
+
+        % literatura
+        \nocite{}
+        \bibliographystyle{plain}
+        \bibliography{viri}
+    
+\end{document}
